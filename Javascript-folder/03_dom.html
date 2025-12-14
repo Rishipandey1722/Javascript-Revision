@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Learning</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+
+  <script>
+    function addLanguage(langName) {
+      const lang = document.createElement("li");
+      const parent = document.querySelector(".language");
+      lang.setAttribute("tittle", langName);
+      const txtNode = document.createTextNode(langName);
+      lang.appendChild(txtNode);
+      parent.appendChild(lang);
+    }
+
+    // innerHTML will traverse whole tree so , it is slow
+
+     function addOptimisedLanguage(langName) {
+      const lang = document.createElement("li");
+      lang.appendChild(document.createTextNode(langName))
+      document.querySelector(".language").appendChild(lang)
+      
+    }
+
+    addLanguage("Python");
+    addLanguage("Java");
+    addOptimisedLanguage("c++")
+
+    // Edit
+
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    console.log(thirdLang);
+    const newThirdLang = document.createElement("li")
+    newThirdLang.textContent = "Java EE"
+    thirdLang.replaceWith(newThirdLang)
+
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = "<li> Typescript </li>"
+
+    // remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+    
+  </script>
+</html>
