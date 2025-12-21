@@ -1,0 +1,52 @@
+/* Reset default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Center everything on the page */
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for color buttons */
+.canvas {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Common button styling */
+.button {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #000;
+}
+
+/* Individual colors */
+#grey {
+  background-color: grey;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#white {
+  background-color: white;
+}
+
+/* Heading styling */
+h1 {
+  font-size: 24px;
+}
